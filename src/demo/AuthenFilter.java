@@ -1,7 +1,6 @@
 package demo;
 
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -10,15 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class LogFilter implements Filter {
-    
-    private static final String TAG = LogFilter.class.getSimpleName();
+public class AuthenFilter implements Filter {
 
-    @Override
-    public void init(FilterConfig config) throws ServletException {
-        String testParam = config.getInitParameter("test-param");
-        logD("init: testParam=" + testParam);
-    }
+    private static final String TAG = AuthenFilter.class.getSimpleName();
     
     @Override
     public void destroy() {
@@ -28,9 +21,13 @@ public class LogFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        String ip = request.getRemoteAddr();
-        logD("doFilter: ip=" + ip + ", time=" + new Date().toString());
+        logD("doFilter");
         chain.doFilter(request, response);
+    }
+
+    @Override
+    public void init(FilterConfig arg0) throws ServletException {
+        logD("init");
     }
 
     private static void logD(String msg) {
