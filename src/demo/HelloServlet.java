@@ -7,6 +7,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,22 @@ public class HelloServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		logD("doGet");
+		
+		String firstName = req.getParameter("first_name");
+        String lastName = req.getParameter("last_name");
+        
+        // …Ë÷√Cookies
+        if (firstName != null && lastName != null) {
+            Cookie firstNameCookie = new Cookie("first_name", firstName);
+            Cookie lastNameCookie = new Cookie("last_name", lastName);
+            firstNameCookie.setMaxAge(3600 * 24);
+            lastNameCookie.setMaxAge(3600 * 24);
+            resp.addCookie(firstNameCookie);
+            resp.addCookie(lastNameCookie);
+        }
+		
 		resp.setContentType("text/html;charset=UTF-8");
+		
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>" + GREETINGS + "</h1>");
 		
@@ -34,8 +50,6 @@ public class HelloServlet extends HttpServlet {
 		}
 		out.println("</ul>");
 		
-		String firstName = req.getParameter("first_name");
-		String lastName = req.getParameter("last_name");
 		out.println("<h2>Get first name: " + firstName + "</h2>\n"
 				+ "<h2>last name: " + lastName + "</h2>");
 		
