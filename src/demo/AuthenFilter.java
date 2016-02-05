@@ -23,6 +23,7 @@ public class AuthenFilter implements Filter {
             throws IOException, ServletException {
         logD("doFilter");
         chain.doFilter(request, response);
+//        throw new IOException("aaa test aaa");  // For ErrorHandler test
     }
 
     @Override
