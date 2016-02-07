@@ -66,4 +66,13 @@
 	<session-config>
 		<session-timeout>15</session-timeout>
 	</session-config>
+	
+	<servlet>
+		<servlet-name>DatabaseAccess</servlet-name>
+		<servlet-class>demo.DatabaseAccess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DatabaseAccess</servlet-name>
+		<url-pattern>/DatabaseAccess</url-pattern>
+	</servlet-mapping>
 </web-app>
