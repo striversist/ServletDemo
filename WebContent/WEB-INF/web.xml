@@ -54,4 +54,16 @@
 	   <exception-type>java.lang.Throwable</exception-type>
 	   <location>/ErrorHandler</location>
 	</error-page>
+	
+	<servlet>
+		<servlet-name>SessionTrack</servlet-name>
+		<servlet-class>demo.SessionTrack</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SessionTrack</servlet-name>
+		<url-pattern>/SessionTrack</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>15</session-timeout>
+	</session-config>
 </web-app>
