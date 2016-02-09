@@ -12,11 +12,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 public class HelloServlet extends HttpServlet {
 
     private static final String TAG = HelloServlet.class.getSimpleName();
 	private static final long serialVersionUID = 1L;
 	private static final String GREETINGS = "hello there!";
+	private static final Logger logger = Logger.getLogger(HelloServlet.class);
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -62,6 +65,12 @@ public class HelloServlet extends HttpServlet {
 		    out.println("<li><b>" + name + "</b>: " + value + "</li>");
 		}
 		out.println("</ul>");
+		
+		logger.debug("log4j debug log");
+		logger.info("log4j info log");
+		logger.warn("log4j info log");
+		logger.error("log4j error log");
+		logger.fatal("log4j fatal log");
 	}
 	
 	@Override
