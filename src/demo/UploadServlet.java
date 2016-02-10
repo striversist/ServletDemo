@@ -15,6 +15,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.servlet.ServletRequestContext;
+import org.apache.commons.io.FileUtils;
 
 
 public class UploadServlet extends HttpServlet {
@@ -77,6 +78,10 @@ public class UploadServlet extends HttpServlet {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		
+		if (tmpDir.exists()) {
+			FileUtils.deleteDirectory(tmpDir);
 		}
 	}
 }
