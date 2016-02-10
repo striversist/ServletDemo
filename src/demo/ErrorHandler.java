@@ -53,8 +53,4 @@ public class ErrorHandler extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
     }
-
-    private static void logD(String msg) {
-        Log.d(TAG, msg);
-    }
 }

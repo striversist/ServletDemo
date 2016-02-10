@@ -10,6 +10,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import demo.utils.Log;
+
 public class LogFilter implements Filter {
     
     private static final String TAG = LogFilter.class.getSimpleName();

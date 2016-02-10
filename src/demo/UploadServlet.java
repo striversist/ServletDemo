@@ -22,11 +22,11 @@ public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final int MAX_UPLOAD_SIZE = 500 * 1024;
 	private static final int MAX_MEM_SIZE = 4 * 1024;
-	private static String FILE_PATH;
+	private static String mUploadPath;
 	
 	@Override
 	public void init() throws ServletException {
-		FILE_PATH = getServletContext().getInitParameter("upload-path");
+		mUploadPath = getServletContext().getInitParameter("upload-path");
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class UploadServlet extends HttpServlet {
 			return;
 		}
 		
-		String uploadTmpDir = req.getServletContext().getRealPath("/upload/tmp");
+		String uploadTmpDir = mUploadPath + File.separator + "tmp";
 		File tmpDir = new File(uploadTmpDir);
 		if (!tmpDir.exists()) {
 			tmpDir.mkdirs();
@@ -69,7 +69,7 @@ public class UploadServlet extends HttpServlet {
 					continue;
 				}
 				
-				File file = new File(FILE_PATH + File.separator + fileName);
+				File file = new File(mUploadPath + File.separator + fileName);
 				item.write(file);
 				out.println("Uploaded fileName:" + fileName + "<br/>");
 			}
