@@ -98,4 +98,8 @@
 		<servlet-name>PageRedirect</servlet-name>
 		<url-pattern>/PageRedirect</url-pattern>
 	</servlet-mapping>
+	
+	<listener>
+		<listener-class>demo.Log4jInit</listener-class>
+	</listener>
 </web-app>
