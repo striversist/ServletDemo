@@ -27,7 +27,7 @@ public class UploadServlet extends HttpServlet {
 	
 	@Override
 	public void init() throws ServletException {
-		mUploadPath = getServletContext().getInitParameter("upload-path");
+		mUploadPath = System.getProperty(PathConfiguration.UPLOAD_PATH);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_ID" version="2.4"
+<web-app id="WebApp_ID" version="2.5"
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaeehttp://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<welcome-file-list>
 		<welcome-file>welcome.html</welcome-file>
 	</welcome-file-list>
@@ -76,11 +76,6 @@
 		<url-pattern>/DatabaseAccess</url-pattern>
 	</servlet-mapping>
 	
-	<context-param>
-		<description>Location to store upload file</description>
-		<param-name>upload-path</param-name>
-		<param-value>D:\Projects\J2EE\ServletDemo\upload\</param-value>
-	</context-param>
 	<servlet>
 		<servlet-name>UploadServlet</servlet-name>
 		<servlet-class>demo.UploadServlet</servlet-class>
@@ -100,6 +95,6 @@
 	</servlet-mapping>
 	
 	<listener>
-		<listener-class>demo.Log4jInit</listener-class>
+		<listener-class>demo.PathConfiguration</listener-class>
 	</listener>
 </web-app>

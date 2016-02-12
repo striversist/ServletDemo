@@ -1,12 +1,17 @@
 package demo;
 
+import java.io.File;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-public class Log4jInit implements ServletContextListener {
+public class PathConfiguration implements ServletContextListener {
 
+	// Root path
 	public static final String ROOT_PATH = "ROOT_PATH";
+	// Location to store upload file
+	public static final String UPLOAD_PATH = "UPLOAD_PATH";
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent event) {
@@ -18,6 +23,7 @@ public class Log4jInit implements ServletContextListener {
 		ServletContext context = event.getServletContext();
 		String rootPath = context.getRealPath("/");
 		System.setProperty(ROOT_PATH, rootPath);
+		System.setProperty(UPLOAD_PATH, rootPath + File.separator + "uploads");
 	}
 
 }
