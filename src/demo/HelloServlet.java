@@ -42,6 +42,9 @@ public class HelloServlet extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>" + GREETINGS + "</h1>");
+		out.println("ROOT_PATH: " + System.getProperty(PathConfiguration.ROOT_PATH) + "<br/>");
+		out.println("catalina.home: " + System.getProperty("catalina.home") + "<br/>");
+		out.println("catalina.base: " + System.getProperty("catalina.base") + "<br/>");
 		
 		// ¥Ú”°«Î«Ûheaders
 		out.println("<ul>");
