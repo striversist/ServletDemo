@@ -5,7 +5,9 @@ import java.io.File;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
+@WebListener(value="For Path Init Listener")
 public class PathConfiguration implements ServletContextListener {
 
 	// Root path
