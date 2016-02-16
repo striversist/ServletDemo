@@ -1,6 +1,5 @@
 package demo;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -27,7 +26,7 @@ public class DatabaseAccess extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			Class.forName(JDBC_DRIVER);
-			logD("doGet: jdbc driver load success!");;
+			logD("doGet: jdbc driver load success!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -63,15 +62,5 @@ public class DatabaseAccess extends HttpServlet {
 	
 	private static void logD(String msg) {
 		System.out.println(TAG + ": " + msg);
-	}
-	
-	private static void closeSilently(Closeable closeable) {
-		if (closeable == null)
-			return;
-		try {
-			closeable.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 }
