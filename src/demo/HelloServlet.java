@@ -28,7 +28,7 @@ public class HelloServlet extends HttpServlet {
 		String firstName = req.getParameter("first_name");
         String lastName = req.getParameter("last_name");
         
-        // 设置Cookies
+        // 璁剧疆Cookies
         if (firstName != null && lastName != null) {
             Cookie firstNameCookie = new Cookie("first_name", firstName);
             Cookie lastNameCookie = new Cookie("last_name", lastName);
@@ -46,7 +46,7 @@ public class HelloServlet extends HttpServlet {
 		out.println("catalina.home: " + System.getProperty("catalina.home") + "<br/>");
 		out.println("catalina.base: " + System.getProperty("catalina.base") + "<br/>");
 		
-		// 打印请求headers
+		// 鎵撳嵃璇锋眰headers
 		out.println("<ul>");
 		Enumeration<String> paramHeaders = req.getHeaderNames();
 		while (paramHeaders.hasMoreElements()) {
@@ -59,7 +59,7 @@ public class HelloServlet extends HttpServlet {
 		out.println("<h2>Get first name: " + firstName + "</h2>\n"
 				+ "<h2>last name: " + lastName + "</h2>");
 		
-		// 打印表单
+		// 鎵撳嵃琛ㄥ崟
 		out.println("<ul>");
 		Enumeration<String> paramNames = req.getParameterNames();
 		while (paramNames.hasMoreElements()) {

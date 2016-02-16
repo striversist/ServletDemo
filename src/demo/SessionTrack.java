@@ -16,7 +16,7 @@ public class SessionTrack extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Èç¹û²»´æÔÚ session »á»°£¬Ôò´´½¨Ò»¸ö session ¶ÔÏó
+		// å¦‚æœä¸å­˜åœ¨ session ä¼šè¯ï¼Œåˆ™åˆ›å»ºä¸€ä¸ª session å¯¹è±¡
 		HttpSession session = req.getSession(true);
 		Date createTime = new Date(session.getCreationTime());
 		Date lastAccessTime = new Date(session.getLastAccessedTime());
@@ -47,10 +47,10 @@ public class SessionTrack extends HttpServlet {
 	                "<head><title>" + title + "</title></head>\n" +
 	                "<body bgcolor=\"#f0f0f0\">\n" +
 	                "<h1 align=\"center\">" + title + "</h1>\n" +
-	                 "<h2 align=\"center\">Session ĞÅÏ¢</h2>\n" +
+	                 "<h2 align=\"center\">Session ä¿¡æ¯</h2>\n" +
 	                "<table border=\"1\" align=\"center\">\n" +
 	                "<tr bgcolor=\"#949494\">\n" +
-	                "  <th>Session ĞÅÏ¢</th><th>Öµ</th></tr>\n" +
+	                "  <th>Session ä¿¡æ¯</th><th>å€¼</th></tr>\n" +
 	                "<tr>\n" +
 	                "  <td>id</td>\n" +
 	                "  <td>" + session.getId() + "</td></tr>\n" +
