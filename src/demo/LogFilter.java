@@ -9,9 +9,13 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 
 import demo.utils.Log;
 
+@WebFilter(filterName = "LogFilter", urlPatterns = { "/*" }, initParams = {
+        @WebInitParam(name = "test-param", value = "Initialization Paramter") })
 public class LogFilter implements Filter {
     
     private static final String TAG = LogFilter.class.getSimpleName();
