@@ -16,14 +16,6 @@
 		<url-pattern />
 	</filter-mapping>
 	
-	<servlet>
-	   <servlet-name>ErrorHandler</servlet-name>
-	   <servlet-class>demo.ErrorHandler</servlet-class>
-	</servlet>
-	<servlet-mapping>
-	   <servlet-name>ErrorHandler</servlet-name>
-	   <url-pattern>/ErrorHandler</url-pattern>
-	</servlet-mapping>
 	<error-page>
 	   <error-code>404</error-code>
 	   <location>/ErrorHandler</location>
@@ -33,44 +25,9 @@
 	   <location>/ErrorHandler</location>
 	</error-page>
 	
-	<servlet>
-		<servlet-name>SessionTrack</servlet-name>
-		<servlet-class>demo.SessionTrack</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SessionTrack</servlet-name>
-		<url-pattern>/SessionTrack</url-pattern>
-	</servlet-mapping>
 	<session-config>
 		<session-timeout>15</session-timeout>
 	</session-config>
-	
-	<servlet>
-		<servlet-name>DatabaseAccess</servlet-name>
-		<servlet-class>demo.DatabaseAccess</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DatabaseAccess</servlet-name>
-		<url-pattern>/DatabaseAccess</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>UploadServlet</servlet-name>
-		<servlet-class>demo.UploadServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>UploadServlet</servlet-name>
-		<url-pattern>/UploadServlet</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>PageRedirect</servlet-name>
-		<servlet-class>demo.PageRedirect</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>PageRedirect</servlet-name>
-		<url-pattern>/PageRedirect</url-pattern>
-	</servlet-mapping>
 	
 	<listener>
 		<listener-class>demo.PathConfiguration</listener-class>

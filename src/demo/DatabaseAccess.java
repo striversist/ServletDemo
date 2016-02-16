@@ -9,10 +9,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "DatabaseAccess", urlPatterns = { "/DatabaseAccess" })
 public class DatabaseAccess extends HttpServlet {
 
 	private static final String TAG = DatabaseAccess.class.getSimpleName();
