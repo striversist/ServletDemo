@@ -3,6 +3,7 @@
 	<name>ServletDemo</name>
 	<comment></comment>
 	<projects>
+		<project>ServletDemoPlugin</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
