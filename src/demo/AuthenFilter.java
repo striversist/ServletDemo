@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebFilter;
 
 import demo.utils.Log;
 
-@WebFilter(filterName = "AuthenFilter", urlPatterns = { "/*" })
+@WebFilter(filterName = "AuthenFilter", urlPatterns = { "/*" }, asyncSupported = true)
 public class AuthenFilter implements Filter {
 
     private static final String TAG = AuthenFilter.class.getSimpleName();
